@@ -1,5 +1,6 @@
 {
   "name": "code",
+  "homepage": "https://TOSHKA-711.github.io/movie",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,6 +8,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.22.0",
+    "gh-pages": "^6.1.1",
     "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -18,10 +20,12 @@
   },
   "scripts": {
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:legacy": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start"
+    "start:legacy": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "predeploy": "set NODE_OPTIONS=--openssl-legacy-provider && npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
